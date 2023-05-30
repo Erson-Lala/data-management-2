@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./Components/Header/Header";
+import Regjistrohu from "./Components/Regjistrohu/Regjistrohu";
+import Indentifikohu from "./Components/Indentifikohu/Indentifikohu";
+import Studentet from "./Components/Studentet/Studentet";
+import DetajetEStudenteve from "./Components/DetajetEStudenteve/DetajetEStudenteve";
+import './App.sass'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header/>
+      <Routes>
+        <Route path="/regjistrohu" element={<Regjistrohu/>}/>
+        <Route path="/indentifikohu" element={<Indentifikohu/>}/>
+        <Route path="/studentet" element={<Studentet/>}/>
+        <Route path="/detajetestudenteve" element={<DetajetEStudenteve/>}/>
+      </Routes>
+    </Router>
   );
 }
 
